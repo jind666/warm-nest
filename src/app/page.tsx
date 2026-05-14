@@ -60,6 +60,7 @@ export default function Home() {
   const [selectedImageFile, setSelectedImageFile] = useState<File | null>(null);
   const [selectedVideoFile, setSelectedVideoFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadMessage, setUploadMessage] = useState("");
   const [activeMedia, setActiveMedia] = useState<{
     type: "image" | "video";
@@ -430,6 +431,40 @@ export default function Home() {
     setActiveMedia(null);
   };
 
+  const uploadFileToCos = (uploadUrl: string, file: File) => {
+    return new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open("PUT", uploadUrl, true);
+      xhr.setRequestHeader("Content-Type", file.type || "application/octet-stream");
+
+      xhr.upload.onprogress = (event) => {
+        if (!event.lengthComputable) {
+          return;
+        }
+
+        const percent = Math.round((event.loaded / event.total) * 100);
+        setUploadProgress(percent);
+        setUploadMessage(`正在上传 ${file.name}，已完成 ${percent}%...`);
+      };
+
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve();
+          return;
+        }
+
+        reject(new Error(xhr.responseText || `COS 上传失败，状态码 ${xhr.status}`));
+      };
+
+      xhr.onerror = () => {
+        reject(new Error("COS 上传失败，可能是腾讯云 COS 还没有放行 PUT/OPTIONS 跨域请求。"));
+      };
+
+      xhr.send(file);
+    });
+  };
+
   const handleUploadSelectedFiles = async () => {
     const files = [selectedImageFile, selectedVideoFile].filter(Boolean) as File[];
 
@@ -439,24 +474,28 @@ export default function Home() {
     }
 
     setUploading(true);
+  setUploadProgress(0);
     setUploadMessage("正在上传到 COS，请稍等...");
 
     try {
       const uploadedMedia: Array<{ type: "image" | "video"; label: string; key: string }> = [];
 
-      for (const file of files) {
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("date", selectedDate);
-
+      for (const [index, file] of files.entries()) {
         const response = await fetch("/api/upload", {
           method: "POST",
           credentials: "include",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            date: selectedDate,
+            fileName: file.name,
+            contentType: file.type || "application/octet-stream",
+          }),
         });
 
         const payload = (await response.json()) as
-          | { ok: true; key: string; fileName: string; url: string | null }
+          | { ok: true; key: string; fileName: string; uploadUrl: string; previewUrl: string }
           | { error: string };
 
         if (!response.ok || !("ok" in payload)) {
@@ -467,6 +506,10 @@ export default function Home() {
           }
           throw new Error("error" in payload ? payload.error : "上传失败");
         }
+
+        setUploadProgress(Math.round((index / files.length) * 100));
+        await uploadFileToCos(payload.uploadUrl, file);
+        setUploadProgress(Math.round(((index + 1) / files.length) * 100));
 
         uploadedMedia.push({
           type: file.type.startsWith("video/") ? "video" : "image",
@@ -511,6 +554,7 @@ export default function Home() {
       if (videoInputRef.current) {
         videoInputRef.current.value = "";
       }
+      setUploadProgress(100);
       setUploadMessage("上传完成，内容已经保存到云端。");
     } catch (error) {
       const message = error instanceof Error ? error.message : "上传失败，请再试一次。";
@@ -820,7 +864,17 @@ export default function Home() {
                 </div>
 
                 {uploadMessage ? (
-                  <p className="text-sm text-slate-600">{uploadMessage}</p>
+                  <div className="space-y-3 text-sm text-slate-600">
+                    <p>{uploadMessage}</p>
+                    {uploading ? (
+                      <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+                        <div
+                          className="h-full rounded-full bg-rose-500 transition-all duration-300"
+                          style={{ width: `${Math.min(uploadProgress, 100)}%` }}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
                 ) : null}
               </div>
 

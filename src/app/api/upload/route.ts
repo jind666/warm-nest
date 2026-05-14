@@ -22,37 +22,21 @@ function sanitizeFileName(fileName: string) {
   return fileName.replace(/[^a-zA-Z0-9._-]+/g, "-");
 }
 
-function uploadObject({
-  key,
-  body,
-  contentType,
-}: {
-  key: string;
-  body: Buffer;
-  contentType: string;
-}) {
+function createSignedUploadUrl(key: string, contentType: string) {
   if (!cos || !bucket || !region) {
     throw new Error("COS is not configured.");
   }
 
-  return new Promise<COS.PutObjectResult>((resolve, reject) => {
-    cos.putObject(
-      {
-        Bucket: bucket,
-        Region: region,
-        Key: key,
-        Body: body,
-        ContentType: contentType,
-      },
-      (error, data) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-
-        resolve(data);
-      },
-    );
+  return cos.getObjectUrl({
+    Bucket: bucket,
+    Region: region,
+    Key: key,
+    Method: "PUT",
+    Sign: true,
+    Expires: 900,
+    Headers: {
+      "Content-Type": contentType,
+    },
   });
 }
 
@@ -79,30 +63,30 @@ export async function POST(request: Request) {
       );
     }
 
-    const formData = await request.formData();
-    const file = formData.get("file");
-    const date = String(formData.get("date") ?? "undated");
+    const body = (await request.json()) as {
+      date?: string;
+      fileName?: string;
+      contentType?: string;
+    };
 
-    if (!(file instanceof File)) {
+    const date = String(body.date ?? "undated");
+    const fileName = body.fileName?.trim();
+    const contentType = body.contentType?.trim() || "application/octet-stream";
+
+    if (!fileName) {
       return NextResponse.json(
         {
-          error: "没有找到要上传的文件。",
+          error: "没有找到文件名。",
         },
         { status: 400 },
       );
     }
 
-    const fileBuffer = Buffer.from(await file.arrayBuffer());
-    const safeName = sanitizeFileName(file.name || `upload-${randomUUID()}`);
+    const safeName = sanitizeFileName(fileName || `upload-${randomUUID()}`);
     const key = `memories/${date}/${randomUUID()}-${safeName}`;
 
-    await uploadObject({
-      key,
-      body: fileBuffer,
-      contentType: file.type || "application/octet-stream",
-    });
-
-    const signedUrl = cos.getObjectUrl({
+    const uploadUrl = createSignedUploadUrl(key, contentType);
+    const previewUrl = cos.getObjectUrl({
       Bucket: bucket,
       Region: region,
       Key: key,
@@ -114,12 +98,12 @@ export async function POST(request: Request) {
     return NextResponse.json({
       ok: true,
       key,
-      url: signedUrl,
+      uploadUrl,
+      previewUrl,
       bucket,
       region,
-      size: file.size,
-      contentType: file.type,
-      fileName: file.name,
+      contentType,
+      fileName,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "上传失败。";
