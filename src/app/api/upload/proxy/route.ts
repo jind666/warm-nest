@@ -17,6 +17,29 @@ const cos =
       })
     : null;
 
+function serializeUploadError(error: unknown) {
+  if (error instanceof Error) {
+    return {
+      message: error.message,
+      name: error.name,
+      stack: error.stack,
+    };
+  }
+
+  if (error && typeof error === "object") {
+    return {
+      message: "上传失败。",
+      details: Object.fromEntries(
+        Object.entries(error).map(([key, value]) => [key, typeof value === "string" ? value : String(value)]),
+      ),
+    };
+  }
+
+  return {
+    message: typeof error === "string" ? error : "上传失败。",
+  };
+}
+
 export async function POST(request: Request) {
   try {
     if (!cos || !bucket || !region) {
@@ -65,12 +88,10 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "上传失败。";
+    const payload = serializeUploadError(error);
 
     return NextResponse.json(
-      {
-        error: message,
-      },
+      { error: payload.message, ...payload },
       { status: 500 },
     );
   }
