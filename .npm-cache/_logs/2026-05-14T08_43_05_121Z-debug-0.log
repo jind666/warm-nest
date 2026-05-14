@@ -1,0 +1,431 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.13.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/jind/Desktop/Code/website/.npmrc
+5 silly config load:file:/Users/jind/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install @supabase/supabase-js
+8 verbose argv "install" "@supabase/supabase-js" "--legacy-peer-deps" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:/Users/jind/Desktop/Code/website/.npm-cache/_logs/2026-05-14T08_43_05_121Z-
+10 verbose logfile /Users/jind/Desktop/Code/website/.npm-cache/_logs/2026-05-14T08_43_05_121Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly idealTree buildDeps
+14 silly fetch manifest @supabase/supabase-js@*
+15 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fsupabase-js cache-miss
+16 http fetch GET 200 https://registry.npmmirror.com/@supabase%2fsupabase-js 206ms (cache miss)
+17 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fsupabase-js set size:409515 disposed:false
+18 silly placeDep ROOT @supabase/supabase-js@2.105.4 OK for: website@0.1.0 want: *
+19 silly fetch manifest @supabase/auth-js@2.105.4
+20 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fauth-js cache-miss
+21 silly fetch manifest @supabase/functions-js@2.105.4
+22 silly packumentCache full:https://registry.npmmirror.com/@supabase%2ffunctions-js cache-miss
+23 silly fetch manifest @supabase/postgrest-js@2.105.4
+24 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fpostgrest-js cache-miss
+25 silly fetch manifest @supabase/realtime-js@2.105.4
+26 silly packumentCache full:https://registry.npmmirror.com/@supabase%2frealtime-js cache-miss
+27 silly fetch manifest @supabase/storage-js@2.105.4
+28 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fstorage-js cache-miss
+29 http fetch GET 200 https://registry.npmmirror.com/@supabase%2fauth-js 76ms (cache miss)
+30 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fauth-js set size:171424 disposed:false
+31 http fetch GET 200 https://registry.npmmirror.com/@supabase%2fpostgrest-js 123ms (cache miss)
+32 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fpostgrest-js set size:214182 disposed:false
+33 http fetch GET 200 https://registry.npmmirror.com/@supabase%2fstorage-js 131ms (cache miss)
+34 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fstorage-js set size:182706 disposed:false
+35 http fetch GET 200 https://registry.npmmirror.com/@supabase%2ffunctions-js 145ms (cache miss)
+36 silly packumentCache full:https://registry.npmmirror.com/@supabase%2ffunctions-js set size:146079 disposed:false
+37 http fetch GET 200 https://registry.npmmirror.com/@supabase%2frealtime-js 152ms (cache miss)
+38 silly packumentCache full:https://registry.npmmirror.com/@supabase%2frealtime-js set size:224343 disposed:false
+39 silly placeDep ROOT @supabase/auth-js@2.105.4 OK for: @supabase/supabase-js@2.105.4 want: 2.105.4
+40 silly placeDep ROOT @supabase/functions-js@2.105.4 OK for: @supabase/supabase-js@2.105.4 want: 2.105.4
+41 silly placeDep ROOT @supabase/postgrest-js@2.105.4 OK for: @supabase/supabase-js@2.105.4 want: 2.105.4
+42 silly placeDep ROOT @supabase/realtime-js@2.105.4 OK for: @supabase/supabase-js@2.105.4 want: 2.105.4
+43 silly placeDep ROOT @supabase/storage-js@2.105.4 OK for: @supabase/supabase-js@2.105.4 want: 2.105.4
+44 silly fetch manifest @supabase/phoenix@^0.4.2
+45 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fphoenix cache-miss
+46 silly fetch manifest iceberg-js@^0.8.1
+47 silly packumentCache full:https://registry.npmmirror.com/iceberg-js cache-miss
+48 http fetch GET 200 https://registry.npmmirror.com/iceberg-js 44ms (cache miss)
+49 silly packumentCache full:https://registry.npmmirror.com/iceberg-js set size:9253 disposed:false
+50 http fetch GET 200 https://registry.npmmirror.com/@supabase%2fphoenix 44ms (cache miss)
+51 silly packumentCache full:https://registry.npmmirror.com/@supabase%2fphoenix set size:6031 disposed:false
+52 silly placeDep ROOT @supabase/phoenix@0.4.2 OK for: @supabase/realtime-js@2.105.4 want: ^0.4.2
+53 silly placeDep ROOT iceberg-js@0.8.1 OK for: @supabase/storage-js@2.105.4 want: ^0.8.1
+54 silly reify moves {}
+55 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-wasm32-wasi
+56 silly reify mark deleted [
+56 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-wasm32-wasi'
+56 silly reify ]
+57 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-win32-x64-msvc
+58 silly reify mark deleted [
+58 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-win32-x64-msvc'
+58 silly reify ]
+59 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-win32-arm64-msvc
+60 silly reify mark deleted [
+60 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-win32-arm64-msvc'
+60 silly reify ]
+61 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-x64-musl
+62 silly reify mark deleted [
+62 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-x64-musl'
+62 silly reify ]
+63 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-x64-gnu
+64 silly reify mark deleted [
+64 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-x64-gnu'
+64 silly reify ]
+65 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm64-musl
+66 silly reify mark deleted [
+66 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm64-musl'
+66 silly reify ]
+67 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm64-gnu
+68 silly reify mark deleted [
+68 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm64-gnu'
+68 silly reify ]
+69 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm-gnueabihf
+70 silly reify mark deleted [
+70 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-linux-arm-gnueabihf'
+70 silly reify ]
+71 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-freebsd-x64
+72 silly reify mark deleted [
+72 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-freebsd-x64'
+72 silly reify ]
+73 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-darwin-x64
+74 silly reify mark deleted [
+74 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-darwin-x64'
+74 silly reify ]
+75 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/lightningcss-android-arm64
+76 silly reify mark deleted [
+76 silly reify   '/Users/jind/Desktop/Code/website/node_modules/lightningcss-android-arm64'
+76 silly reify ]
+77 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-x64-msvc
+78 silly reify mark deleted [
+78 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-x64-msvc'
+78 silly reify ]
+79 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-ia32-msvc
+80 silly reify mark deleted [
+80 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-ia32-msvc'
+80 silly reify ]
+81 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-arm64-msvc
+82 silly reify mark deleted [
+82 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-win32-arm64-msvc'
+82 silly reify ]
+83 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-wasm32-wasi
+84 silly reify mark deleted [
+84 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-wasm32-wasi'
+84 silly reify ]
+85 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-x64-musl
+86 silly reify mark deleted [
+86 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-x64-musl'
+86 silly reify ]
+87 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-x64-gnu
+88 silly reify mark deleted [
+88 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-x64-gnu'
+88 silly reify ]
+89 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-s390x-gnu
+90 silly reify mark deleted [
+90 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-s390x-gnu'
+90 silly reify ]
+91 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-riscv64-musl
+92 silly reify mark deleted [
+92 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-riscv64-musl'
+92 silly reify ]
+93 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-riscv64-gnu
+94 silly reify mark deleted [
+94 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-riscv64-gnu'
+94 silly reify ]
+95 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-ppc64-gnu
+96 silly reify mark deleted [
+96 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-ppc64-gnu'
+96 silly reify ]
+97 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm64-musl
+98 silly reify mark deleted [
+98 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm64-musl'
+98 silly reify ]
+99 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm64-gnu
+100 silly reify mark deleted [
+100 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm64-gnu'
+100 silly reify ]
+101 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm-musleabihf
+102 silly reify mark deleted [
+102 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm-musleabihf'
+102 silly reify ]
+103 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf
+104 silly reify mark deleted [
+104 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf'
+104 silly reify ]
+105 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-freebsd-x64
+106 silly reify mark deleted [
+106 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-freebsd-x64'
+106 silly reify ]
+107 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-darwin-x64
+108 silly reify mark deleted [
+108 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-darwin-x64'
+108 silly reify ]
+109 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-android-arm64
+110 silly reify mark deleted [
+110 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-android-arm64'
+110 silly reify ]
+111 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-android-arm-eabi
+112 silly reify mark deleted [
+112 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@unrs/resolver-binding-android-arm-eabi'
+112 silly reify ]
+113 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-win32-x64-msvc
+114 silly reify mark deleted [
+114 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-win32-x64-msvc'
+114 silly reify ]
+115 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+116 silly reify mark deleted [
+116 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-win32-arm64-msvc'
+116 silly reify ]
+117 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-x64-musl
+118 silly reify mark deleted [
+118 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-x64-musl'
+118 silly reify ]
+119 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-x64-gnu
+120 silly reify mark deleted [
+120 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-x64-gnu'
+120 silly reify ]
+121 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm64-musl
+122 silly reify mark deleted [
+122 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm64-musl'
+122 silly reify ]
+123 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm64-gnu
+124 silly reify mark deleted [
+124 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm64-gnu'
+124 silly reify ]
+125 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+126 silly reify mark deleted [
+126 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+126 silly reify ]
+127 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-freebsd-x64
+128 silly reify mark deleted [
+128 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-freebsd-x64'
+128 silly reify ]
+129 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-darwin-x64
+130 silly reify mark deleted [
+130 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-darwin-x64'
+130 silly reify ]
+131 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-android-arm64
+132 silly reify mark deleted [
+132 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@tailwindcss/oxide-android-arm64'
+132 silly reify ]
+133 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-win32-x64-msvc
+134 silly reify mark deleted [
+134 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-win32-x64-msvc'
+134 silly reify ]
+135 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-win32-arm64-msvc
+136 silly reify mark deleted [
+136 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-win32-arm64-msvc'
+136 silly reify ]
+137 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-x64-musl
+138 silly reify mark deleted [
+138 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-x64-musl'
+138 silly reify ]
+139 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-x64-gnu
+140 silly reify mark deleted [
+140 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-x64-gnu'
+140 silly reify ]
+141 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-arm64-musl
+142 silly reify mark deleted [
+142 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-arm64-musl'
+142 silly reify ]
+143 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-arm64-gnu
+144 silly reify mark deleted [
+144 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-linux-arm64-gnu'
+144 silly reify ]
+145 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@next/swc-darwin-x64
+146 silly reify mark deleted [
+146 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@next/swc-darwin-x64'
+146 silly reify ]
+147 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-x64
+148 silly reify mark deleted [
+148 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-x64'
+148 silly reify ]
+149 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-ia32
+150 silly reify mark deleted [
+150 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-ia32'
+150 silly reify ]
+151 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-arm64
+152 silly reify mark deleted [
+152 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-win32-arm64'
+152 silly reify ]
+153 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-wasm32
+154 silly reify mark deleted [ '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-wasm32' ]
+155 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linuxmusl-x64
+156 silly reify mark deleted [
+156 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linuxmusl-x64'
+156 silly reify ]
+157 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linuxmusl-arm64
+158 silly reify mark deleted [
+158 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linuxmusl-arm64'
+158 silly reify ]
+159 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-x64
+160 silly reify mark deleted [
+160 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-x64'
+160 silly reify ]
+161 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-s390x
+162 silly reify mark deleted [
+162 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-s390x'
+162 silly reify ]
+163 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-riscv64
+164 silly reify mark deleted [
+164 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-riscv64'
+164 silly reify ]
+165 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-ppc64
+166 silly reify mark deleted [
+166 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-ppc64'
+166 silly reify ]
+167 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-arm64
+168 silly reify mark deleted [
+168 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-arm64'
+168 silly reify ]
+169 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-arm
+170 silly reify mark deleted [
+170 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-linux-arm'
+170 silly reify ]
+171 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linuxmusl-x64
+172 silly reify mark deleted [
+172 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linuxmusl-x64'
+172 silly reify ]
+173 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linuxmusl-arm64
+174 silly reify mark deleted [
+174 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linuxmusl-arm64'
+174 silly reify ]
+175 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-x64
+176 silly reify mark deleted [
+176 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-x64'
+176 silly reify ]
+177 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-s390x
+178 silly reify mark deleted [
+178 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-s390x'
+178 silly reify ]
+179 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-riscv64
+180 silly reify mark deleted [
+180 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-riscv64'
+180 silly reify ]
+181 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-ppc64
+182 silly reify mark deleted [
+182 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-ppc64'
+182 silly reify ]
+183 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-arm64
+184 silly reify mark deleted [
+184 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-arm64'
+184 silly reify ]
+185 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-arm
+186 silly reify mark deleted [
+186 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-linux-arm'
+186 silly reify ]
+187 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-darwin-x64
+188 silly reify mark deleted [
+188 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-libvips-darwin-x64'
+188 silly reify ]
+189 verbose reify failed optional dependency /Users/jind/Desktop/Code/website/node_modules/@img/sharp-darwin-x64
+190 silly reify mark deleted [
+190 silly reify   '/Users/jind/Desktop/Code/website/node_modules/@img/sharp-darwin-x64'
+190 silly reify ]
+191 http cache iceberg-js@https://registry.npmmirror.com/iceberg-js/-/iceberg-js-0.8.1.tgz 0ms (cache hit)
+192 http cache @supabase/phoenix@https://registry.npmmirror.com/@supabase/phoenix/-/phoenix-0.4.2.tgz 0ms (cache hit)
+193 http cache @supabase/realtime-js@https://registry.npmmirror.com/@supabase/realtime-js/-/realtime-js-2.105.4.tgz 0ms (cache hit)
+194 http cache @supabase/storage-js@https://registry.npmmirror.com/@supabase/storage-js/-/storage-js-2.105.4.tgz 0ms (cache hit)
+195 http cache @supabase/postgrest-js@https://registry.npmmirror.com/@supabase/postgrest-js/-/postgrest-js-2.105.4.tgz 0ms (cache hit)
+196 http cache @supabase/auth-js@https://registry.npmmirror.com/@supabase/auth-js/-/auth-js-2.105.4.tgz 0ms (cache hit)
+197 http cache @supabase/functions-js@https://registry.npmmirror.com/@supabase/functions-js/-/functions-js-2.105.4.tgz 0ms (cache hit)
+198 http cache @supabase/supabase-js@https://registry.npmmirror.com/@supabase/supabase-js/-/supabase-js-2.105.4.tgz 0ms (cache hit)
+199 silly tarball no local data for iceberg-js@https://registry.npmmirror.com/iceberg-js/-/iceberg-js-0.8.1.tgz. Extracting by manifest.
+200 silly tarball no local data for @supabase/phoenix@https://registry.npmmirror.com/@supabase/phoenix/-/phoenix-0.4.2.tgz. Extracting by manifest.
+201 silly tarball no local data for @supabase/realtime-js@https://registry.npmmirror.com/@supabase/realtime-js/-/realtime-js-2.105.4.tgz. Extracting by manifest.
+202 silly tarball no local data for @supabase/storage-js@https://registry.npmmirror.com/@supabase/storage-js/-/storage-js-2.105.4.tgz. Extracting by manifest.
+203 silly tarball no local data for @supabase/postgrest-js@https://registry.npmmirror.com/@supabase/postgrest-js/-/postgrest-js-2.105.4.tgz. Extracting by manifest.
+204 silly tarball no local data for @supabase/auth-js@https://registry.npmmirror.com/@supabase/auth-js/-/auth-js-2.105.4.tgz. Extracting by manifest.
+205 silly tarball no local data for @supabase/functions-js@https://registry.npmmirror.com/@supabase/functions-js/-/functions-js-2.105.4.tgz. Extracting by manifest.
+206 silly tarball no local data for @supabase/supabase-js@https://registry.npmmirror.com/@supabase/supabase-js/-/supabase-js-2.105.4.tgz. Extracting by manifest.
+207 http fetch GET 200 https://cdn.npmmirror.com/packages/iceberg-js/0.8.1/iceberg-js-0.8.1.tgz 109ms (cache miss)
+208 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/phoenix/0.4.2/phoenix-0.4.2.tgz 143ms (cache miss)
+209 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/storage-js/2.105.4/storage-js-2.105.4.tgz 156ms (cache miss)
+210 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/functions-js/2.105.4/functions-js-2.105.4.tgz 161ms (cache miss)
+211 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/postgrest-js/2.105.4/postgrest-js-2.105.4.tgz 170ms (cache miss)
+212 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/realtime-js/2.105.4/realtime-js-2.105.4.tgz 180ms (cache miss)
+213 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/auth-js/2.105.4/auth-js-2.105.4.tgz 193ms (cache miss)
+214 http fetch GET 200 https://cdn.npmmirror.com/packages/%40supabase/supabase-js/2.105.4/supabase-js-2.105.4.tgz 221ms (cache miss)
+215 silly ADD node_modules/iceberg-js
+216 silly ADD node_modules/@supabase/phoenix
+217 silly ADD node_modules/@supabase/storage-js
+218 silly ADD node_modules/@supabase/realtime-js
+219 silly ADD node_modules/@supabase/postgrest-js
+220 silly ADD node_modules/@supabase/functions-js
+221 silly ADD node_modules/@supabase/auth-js
+222 silly ADD node_modules/@supabase/supabase-js
+223 silly ADD
+224 silly ADD
+225 silly ADD
+226 silly ADD
+227 silly ADD
+228 silly ADD
+229 silly ADD
+230 silly ADD
+231 silly ADD
+232 silly ADD
+233 silly ADD
+234 silly ADD
+235 silly ADD
+236 silly ADD
+237 silly ADD
+238 silly ADD
+239 silly ADD
+240 silly ADD
+241 silly ADD
+242 silly ADD
+243 silly ADD
+244 silly ADD
+245 silly ADD
+246 silly ADD
+247 silly ADD
+248 silly ADD
+249 silly ADD
+250 silly ADD
+251 silly ADD
+252 silly ADD
+253 silly ADD
+254 silly ADD
+255 silly ADD
+256 silly ADD
+257 silly ADD
+258 silly ADD
+259 silly ADD
+260 silly ADD
+261 silly ADD
+262 silly ADD
+263 silly ADD
+264 silly ADD
+265 silly ADD
+266 silly ADD
+267 silly ADD
+268 silly ADD
+269 silly ADD
+270 silly ADD
+271 silly ADD
+272 silly ADD
+273 silly ADD
+274 silly ADD
+275 silly ADD
+276 silly ADD
+277 silly ADD
+278 silly ADD
+279 silly ADD
+280 silly ADD
+281 silly ADD
+282 silly ADD
+283 silly ADD
+284 silly ADD
+285 silly ADD
+286 silly ADD
+287 silly ADD
+288 silly ADD
+289 silly ADD
+290 silly ADD
+291 verbose cwd /Users/jind/Desktop/Code/website
+292 verbose os Darwin 24.5.0
+293 verbose node v22.13.0
+294 verbose npm  v10.9.2
+295 verbose exit 0
+296 info ok
