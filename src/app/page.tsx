@@ -465,6 +465,23 @@ export default function Home() {
     });
   };
 
+  const uploadFileThroughProxy = async (key: string, file: File) => {
+    const response = await fetch(`/api/upload/proxy?key=${encodeURIComponent(key)}&contentType=${encodeURIComponent(file.type || "application/octet-stream")}`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": file.type || "application/octet-stream",
+      },
+      body: file,
+    });
+
+    const payload = (await response.json()) as { ok?: true; error?: string };
+
+    if (!response.ok || !payload.ok) {
+      throw new Error(payload.error || "COS 代理上传失败。");
+    }
+  };
+
   const handleUploadSelectedFiles = async () => {
     const files = [selectedImageFile, selectedVideoFile].filter(Boolean) as File[];
 
@@ -508,7 +525,14 @@ export default function Home() {
         }
 
         setUploadProgress(Math.round((index / files.length) * 100));
-        await uploadFileToCos(payload.uploadUrl, file);
+
+        try {
+          await uploadFileToCos(payload.uploadUrl, file);
+        } catch {
+          setUploadMessage(`浏览器直传失败，正在切换到代理上传 ${file.name}...`);
+          await uploadFileThroughProxy(payload.key, file);
+        }
+
         setUploadProgress(Math.round(((index + 1) / files.length) * 100));
 
         uploadedMedia.push({
