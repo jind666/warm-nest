@@ -17,24 +17,6 @@ const cos =
       })
     : null;
 
-function createSignedUploadUrl(key: string, contentType: string) {
-  if (!cos || !bucket || !region) {
-    throw new Error("COS is not configured.");
-  }
-
-  return cos.getObjectUrl({
-    Bucket: bucket,
-    Region: region,
-    Key: key,
-    Method: "PUT",
-    Sign: true,
-    Expires: 900,
-    Headers: {
-      "Content-Type": contentType,
-    },
-  });
-}
-
 export async function POST(request: Request) {
   try {
     if (!cos || !bucket || !region) {
@@ -71,26 +53,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const uploadUrl = createSignedUploadUrl(key, contentType);
     const bodyBuffer = Buffer.from(await request.arrayBuffer());
 
-    const upstreamResponse = await fetch(uploadUrl, {
-      method: "PUT",
-      headers: {
-        "Content-Type": contentType,
-      },
-      body: bodyBuffer,
+    await cos.putObject({
+      Bucket: bucket,
+      Region: region,
+      Key: key,
+      Body: bodyBuffer,
+      ContentType: contentType,
     });
-
-    if (!upstreamResponse.ok) {
-      const errorText = await upstreamResponse.text().catch(() => "");
-      return NextResponse.json(
-        {
-          error: errorText || `COS 上传失败，状态码 ${upstreamResponse.status}`,
-        },
-        { status: 500 },
-      );
-    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
