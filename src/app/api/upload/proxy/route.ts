@@ -72,14 +72,15 @@ export async function POST(request: Request) {
     }
 
     const uploadUrl = createSignedUploadUrl(key, contentType);
+    const bodyBuffer = Buffer.from(await request.arrayBuffer());
+
     const upstreamResponse = await fetch(uploadUrl, {
       method: "PUT",
       headers: {
         "Content-Type": contentType,
       },
-      body: request.body,
-      duplex: "half",
-    } as any);
+      body: bodyBuffer,
+    });
 
     if (!upstreamResponse.ok) {
       const errorText = await upstreamResponse.text().catch(() => "");
