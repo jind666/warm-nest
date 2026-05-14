@@ -2,11 +2,12 @@ import COS from "cos-nodejs-sdk-v5";
 import { randomUUID } from "crypto";
 import { NextResponse } from "next/server";
 import { readCookieValue, SESSION_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
+import { normalizeCosRegion } from "@/lib/cos-region";
 
 export const runtime = "nodejs";
 
 const bucket = process.env.NEXT_PUBLIC_COS_BUCKET;
-const region = process.env.NEXT_PUBLIC_COS_REGION;
+const region = normalizeCosRegion(process.env.NEXT_PUBLIC_COS_REGION);
 const secretId = process.env.COS_SECRET_ID;
 const secretKey = process.env.COS_SECRET_KEY;
 
